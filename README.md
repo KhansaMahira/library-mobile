@@ -50,26 +50,30 @@ _stateful widget_:
 **Sebutkan seluruh _widget_ yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.**
 
 Jawaban:
-- MyApp
-- MaterialApp
-- MyHomePage
-- Scaffold
-- AppBar
-- Text
-- SingleChildScrollView
-- Column
-- Padding
-- GridView
-- LibraryCard
-- Material
-- InkWell
-- SnackBar
-- Container
-- Center
-- Icon
+- MyApp digunakan sebagai _root widget_ dari aplikasi.
+- MaterialApp digunakan sebagai pembungkus Material Widgets lainnya.
+- MyHomePage digunakan sebagai tampilan Home Page.
+- Scaffold digunakan untuk mengimplementasi struktur layout visual desain material.
+- AppBar digunakan sebagai _top app bar_.
+- Text digunakan untuk menampilkan text atau pesan yang telah dituliskan pada kode.
+- SingleChildScrollView digunakan untuk menampilkan setiap elemen atau widget yang tersusun secara berurutan bisa di-_scroll_.
+- Column digunakan untuk menampilkan setiap elemen yang telah ditambahkan menjadi tersusun secara vertikal.
+- Padding digunakan menambah ruang kosong di sekitar widget atau sekelompok widget.
+- GridView digunakan untuk menampilkan item dalam bentuk dua dimensi yaitu row dan colom.
+- LibraryCard digunakan sebagai card untuk menampilkan objek LibraryItem.
+- Material digunakan untuk membuat permukaan desain material persegi panjang.
+- InkWell digunakan untuk merespon peristiwa sentuhan yang dilakukan oleh pengguna.
+- SnackBar digunakan untuk memberitahukan pengguna menggunakan pesan penndek.
+- Container digunakan untuk menyimpan elemen-elemen atau widget-widget lain.
+- Center digunakan untuk menampilkan setiap elemen pada posisi center. 
+- Icon digunakan untuk menampilkan ikon grafis.
 
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)**
 
 Jawaban:
-
-{Jawaban}
+1) Setelah menginstal _tools_ yang diperlukan pada proyek, saya membuat proyek dengan flutter create.
+2) Setelah app default telah dibuat, berikutnya saya merevisi kode disesuaikan dengan kebutuhan saya. Oleh karena itu, saya memisahkan class MyHomePage di file terpisah yaitu menu.dart. Karena berada pada file terpisah, maka saya menambahkan import menu.dart pada main.dart.
+3) Berikutnya pada menu.dart yaitu dengan mengubah sifat widget menjadi class MyHomePage extends StatelessWidget dan melakukan penyesuaian.
+4) Karena aplikasi saya merupakan aplikasi perpustakaan, maka saya membuat kelas LibraryItem dan menambahkan object yang memiliki tipe LibraryItem pada sebuah list yaitu items dalam class MyHomePage.
+5) Karena terdapat list items yang akan ditampilkan pada loop GridView.count, saya membuat class LibraryCard extends StatelessWidget yang responsive terhadap sentuhan menggunakan InkWell dan menampilkan SnackBar jika disentuh.
+6) Untuk menyelesaikan soal bonus, saya menyesuaikan dengan menambahkan properti color pada LibraryItem serta melakukan penyesuaian pada LibraryCard.
