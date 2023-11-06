@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class LibraryItem {
   final String name;
+  final Color color;
   final IconData icon;
 
-  LibraryItem(this.name, this.icon);
+  LibraryItem(this.name, this.color, this.icon);
 }
 
 class LibraryCard extends StatelessWidget {
@@ -15,7 +16,7 @@ class LibraryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.indigo,
+      color: item.color,
       child: InkWell(
         // Area responsive terhadap sentuhan
         onTap: () {
@@ -23,7 +24,7 @@ class LibraryCard extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
-                content: Text("Kamu telah menekan tombol ${item.name}!")));
+                content: Text("Kamu telah menekan tombol ${item.name}")));
         },
         child: Container(
           // Container untuk menyimpan Icon dan Text
@@ -56,9 +57,9 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
   final List<LibraryItem> items = [
-    LibraryItem("Lihat Item", Icons.checklist),
-    LibraryItem("Tambah Item", Icons.add_shopping_cart),
-    LibraryItem("Logout", Icons.logout),
+    LibraryItem("Lihat Item", Colors.redAccent, Icons.checklist),
+    LibraryItem("Tambah Item", Colors.lightGreen, Icons.add_shopping_cart),
+    LibraryItem("Logout", Color(0xFF716CFF), Icons.logout),
 ];
 
     @override
@@ -66,8 +67,9 @@ class MyHomePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: const Text(
-              'Library'
+              'Library',
             ),
+            backgroundColor: Colors.greenAccent,
           ),
           body: SingleChildScrollView(
             // Widget wrapper yang dapat discroll
