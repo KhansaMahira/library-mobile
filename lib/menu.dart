@@ -57,8 +57,8 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
 
   final List<LibraryItem> items = [
-    LibraryItem("Lihat Item", Colors.redAccent, Icons.checklist),
-    LibraryItem("Tambah Item", Colors.lightGreen, Icons.add_shopping_cart),
+    LibraryItem("Lihat Buku", Colors.redAccent, Icons.checklist),
+    LibraryItem("Tambah Buku", Colors.lightGreen, Icons.add_shopping_cart),
     LibraryItem("Logout", Color(0xFF716CFF), Icons.logout),
 ];
 
