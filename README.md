@@ -76,4 +76,4 @@ Jawaban:
 3) Berikutnya pada menu.dart yaitu dengan mengubah sifat widget menjadi class MyHomePage extends StatelessWidget dan melakukan penyesuaian.
 4) Karena aplikasi saya merupakan aplikasi perpustakaan, maka saya membuat kelas LibraryItem dan menambahkan object yang memiliki tipe LibraryItem pada sebuah list yaitu items dalam class MyHomePage.
 5) Karena terdapat list items yang akan ditampilkan pada loop GridView.count, saya membuat class LibraryCard extends StatelessWidget yang responsive terhadap sentuhan menggunakan InkWell dan menampilkan SnackBar jika disentuh.
-6) Untuk menyelesaikan soal bonus, saya menyesuaikan dengan menambahkan properti color pada LibraryItem serta melakukan penyesuaian pada LibraryCard.
+6) Untuk menyelesaikan soal bonus, saya menyesuaikan dengan menambahkan atribut color pada LibraryItem serta melakukan penyesuaian pada LibraryCard.
