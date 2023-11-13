@@ -77,3 +77,41 @@ Jawaban:
 4) Karena aplikasi saya merupakan aplikasi perpustakaan, maka saya membuat kelas LibraryItem dan menambahkan object yang memiliki tipe LibraryItem pada sebuah list yaitu items dalam class MyHomePage.
 5) Karena terdapat list items yang akan ditampilkan pada loop GridView.count, saya membuat class LibraryCard extends StatelessWidget yang responsive terhadap sentuhan menggunakan InkWell dan menampilkan SnackBar jika disentuh.
 6) Untuk menyelesaikan soal bonus, saya menyesuaikan dengan menambahkan atribut color pada LibraryItem serta melakukan penyesuaian pada LibraryCard.
+
+
+**Tugas 8**
+
+**Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!**
+
+Jawaban:
+
+Navigator.push():
+
+Digunakan untuk berganti ke _route_ baru dengan menambahkan _route_ di atas _current route_ pada _stack of routes_ yang diatur oleh Navigator. Contoh penggunaan method ini saat tidak terjadi perubahan dari aksi tertentu sehingga pengguna dapat kembali ke halaman sebelum melakukan navigasi.
+
+Navigator.pushReplacement():
+
+Digunakan untuk menggantikan _route_ yang sedang digunakan saat ini dengan _route_ tujuan. Contoh penggunaan method ini saat pengguna telah membuat sebuah perubahan seperti menyimpan data setelah mengisi suatu form karena pengguna tidak ingin kembali ke halaman sebelum perubahan terjadi.
+
+**Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!**
+
+Jawaban:
+
+**Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!**
+
+Jawaban:
+
+**Bagaimana penerapan clean architecture pada aplikasi Flutter?**
+
+Jawaban:
+
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)**
+
+Jawaban:
+1) Pada tugas ini, saya menambahkan left drawer sebagai navigasi pada aplikasi. Saya menambahkan class LeftDrawer pada left_drawer.dart. Sebagai navigasi, saya menambahkan DrawerHeader serta menggunakan widget ListTile untuk _routing_ dengan Navigator.pushReplacement ke halaman utama dan halaman form tambah buku. Drawer ini digunakan pada menu.dart dan library_form.dart.
+2) Berikutnya, saya membuat form untuk menerima data yang akan di-_input_ oleh pengguna dengan membuat class LibraryFormPage dan class _LibraryFormPageState pada library_form.dart. Pada form, saya akan mengambil data berupa nama, jumlah, dan deskripsi buku. Saya juga menambahkan variabel _formKey sebagai handler dari form state, validasi form, dan penyimpanan form. Masing-masing data diambil menggunakan TextFormField dan memiliki validasi field tidak boleh kosong, tetapi terdapat validasi tambahan pada jumlah menggunakan int.tryParse(value) == null untuk memastikan data yang diinput berupa angka.
+3) Untuk memastikan data sukses dibaca setelah menekan tombol Save, maka data akan dimunculkan menggunakan widget showDialog dengan menampilkan semua data yang telah diisi sebelumnya. Namun, apabila data yang dicoba untuk dibaca tidak sesuai dengan ketentuan validasi, maka di bawah TextFormField akan memberikan keterangan sesuai kondisi yang terjadi.
+4) Saya juga membuat library_card.dart yang isinya berupa class LibraryItem dan class LibraryCard yang telah saya pindahkan dari menu.dart. Pada class LibraryCard saya menambahkan _routing_ menggunakan Navigator.push sesuai dengan nama item.
+5) Untuk kerapihan file, saya membuat folder baru dan memindahkan file ke folder yang sesuai. Folder widgets berisi file left_drawer.dart dan library_card.dart. Folder screens berisi file menu.dart dan library_form.dart.
+6) Untuk menyelesaikan soal bonus, saya membuat folder dan file baru seperti models/book.dart yang berisi class Book sebagai model data. Saya juga membuat services/book_service.dart yang akan menyimpan list buku, menambahkan buku pada list, dan mendapatkan list buku pada class BookService. Saya juga memerlukan class yang menampilkan tabel data dari item buku pada list buku yaitu dengan membuat class LibraryTablePage pada screens/library_table.dart. Pada class LibraryTablePage, saya menggunakan DataTable, DataColumn, dan rows yang memiliki isi berupa BookService.getBooksList() yang di-_map_ pada DataRow dengan masing-masing atribut dari objek buku ditampilkan pada DataCell. Saya juga menambahkan _routing_ menuju halaman Lihat Buku pada widgets/library_card.dart dan widgets/left_drawer.dart.
+7) Tidak lupa juga selama pengerjaan, saya menambahkan import yang dibutuhkan pada masing-masing file.
