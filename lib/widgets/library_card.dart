@@ -34,7 +34,7 @@ class LibraryCard extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const LibraryFormPage()));
           } else if (item.name == "Lihat Buku") {
             Navigator.push(context,
-            MaterialPageRoute(builder: (context) => LibraryTablePage()));
+            MaterialPageRoute(builder: (context) => const LibraryTablePage()));
           }
         },
         child: Container(
