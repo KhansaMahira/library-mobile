@@ -87,7 +87,7 @@ Jawaban:
 
 Navigator.push():
 
-Digunakan untuk berganti ke _route_ baru dengan menambahkan _route_ di atas _current route_ pada _stack of routes_ yang diatur oleh Navigator. Contoh penggunaan method ini saat tidak terjadi perubahan dari aksi tertentu sehingga pengguna dapat kembali ke halaman sebelum melakukan navigasi.
+Digunakan untuk berganti ke _route_ baru dengan menambahkan _route_ di atas _current route_ pada _stack of routes_ yang diatur oleh Navigator. Contoh penggunaan method ini saat tidak terjadi perubahan dari aksi tertentu oleh pengguna sehingga pengguna dapat kembali ke halaman sebelum melakukan navigasi.
 
 Navigator.pushReplacement():
 
@@ -96,14 +96,63 @@ Digunakan untuk menggantikan _route_ yang sedang digunakan saat ini dengan _rout
 **Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!**
 
 Jawaban:
+1) Single-child layout widgets
+   - Align: widget yang menyelaraskan child dengan dirinya sendiri, secara opsional mengukur dirinya berdasarkan child.
+   - AspectRatio: widget yang mengukur child pada rasio aspek tertentu.
+   - Baseline: container yang memposisikan child berdasarkan baseline child.
+   - Center: blok alignment yang menempatkan child pada pusat dirinya.
+   - ConstrainedBox: widget yang memberikan batasan tambahan pada child.
+   - Container: widget yang mengombinasikan widget painting, positioning, and sizing widgets.
+   - CustomSingleChildLayout: widget yang mengalihkan tata letak single child ke delegasi yaitu menentukan batasan tata letak dan posisi child, menentukan ukuran parent tetapi ukuran parent tidak bergantung pada ukuran child.
+   - Expanded: widget yang memperluas turunan dari row, column, atau flex.
+   - FittedBox: menskalakan dan memposisikan child di dalam dirinya berdasarkan kesesuaian.
+   - FractionallySizedBox: widget yang mengukur child hingga ukuran bagian kecil dari total ruang yang tersedia.
+   - IntrinsicHeight: widget yang mengukur child sesuai dengan tinggi intrinsik child.
+   - IntrinsicWidth: widget yang mengukur child sesuai dengan lebar intrinsik child.
+   - LimitedBox: box yang membatasi ukurannya hanya jika tidak dibatasi.
+   - Offstage: widget yang menampilkan child seperti berada di pohon, tetapi tanpa menggambar apapun, tanpa membuat child tersedia untuk pengujian, dan tanpa mengambil ruang apapun pada parent.
+   - OverflowBox: widget yang menerapkan batasan berbeda pada child dibandingkan yang didapat dari parent, sehingga memungkinkan child untuk melampaui parent.
+   - Padding: widget yang menyisipkan child berdaasrkan padding yang diberikan.
+   - SizedBox: box dengan ukuran tertentu.
+   - SizedOverflowBox: widget dengan ukuran tertentu tetapi meneruskan batasan asli ke child, yang mungkin akan overflow.
+   - Transform: widget yang menerapkan transformasi sebelum menggambar child.
+2) Multi-child layout widgets
+   - Column: tata letak list child widget dalam arah vertikal.
+   - CustomMultiChildLayout: widget yang menggunakan delegasi untuk mengukur dan menempatkan beberapa anak.
+   - Flow: widget yang mengimplementasikan algoritma flow tata letak.
+   - GridView: list gird terdiri dari pola sel berulang yang disusun dalam tata letak vertikal dan horizontal.
+   - IndexedStack: stack yang menampilkan single child dari daftar child.
+   - LayoutBuilder: membangun pohon widget yang dapat bergantung pada ukuran widget induk.
+   - ListBody: widget yang menyusun turunannya secara berurutan sepanjang sumbu tertentu, memaksanya ke dimensi parent di sumbu lain.
+   - ListView: daftar widget yang dapat di-_scroll_.
+   - Row: tata letak list child widget dalam arah horizontal.
+   - Stack: widget yang menempatkan children relatif terhadap tepi box.
+   - Table: menampilkan widget child dalam baris dan kolom.
+   - Wrap: widget yang menampilkan children dalam beberapa proses horizontal atau vertikal.
+3) Sliver widgets
+   - CupertinoSliverNavigationBar
+   - CustomScrollView
+   - SliverAppBar
+   - SliverChildBuilderDelegate
+   - SliverChildListDelegate
+   - SliverFixedExtentList
+   - SliverGrid
+   - SliverList
+   - SliverPadding
+   - SliverPersistentHeader
+   - SliverToBoxAdapter
 
 **Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!**
 
 Jawaban:
 
+Elemen input pada form yang digunakan merupakan TextFormField karena menerima seluruh karakter yang sesuai digunakan untuk input nama atau judul buku, jumlah, dan deskripsi. Untuk membatasi input jumlah hanya bilangan bulat, maka pada validator terdapat branch untuk kondisi int.tryParse(value) == null.
+
 **Bagaimana penerapan clean architecture pada aplikasi Flutter?**
 
 Jawaban:
+
+
 
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)**
 
