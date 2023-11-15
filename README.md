@@ -130,17 +130,17 @@ Jawaban:
    - Table: menampilkan widget child dalam baris dan kolom.
    - Wrap: widget yang menampilkan children dalam beberapa proses horizontal atau vertikal.
 3) Sliver widgets
-   - CupertinoSliverNavigationBar
-   - CustomScrollView
-   - SliverAppBar
-   - SliverChildBuilderDelegate
-   - SliverChildListDelegate
-   - SliverFixedExtentList
-   - SliverGrid
-   - SliverList
-   - SliverPadding
-   - SliverPersistentHeader
-   - SliverToBoxAdapter
+   - CupertinoSliverNavigationBar: bar navigasi iOS-styled dengan iOS-11-style judul besar menggunakan slivers.
+   - CustomScrollView: ScrollView yang membuat custom scroll effects menggunakan slivers.
+   - SliverAppBar: desain material app bar yang terintegrasi dengan CustomScrollView.
+   - SliverChildBuilderDelegate: delegasi yang menyuplai children ke slivers menggunakan builder callback.
+   - SliverChildListDelegate: delegasi yang meyuplai children ke sliver menggunakan explicit list.
+   - SliverFixedExtentList: sliver yang menempatkan multiple box children dengan luas sumbu utama yang sama dengan linear array.
+   - SliverGrid: sliver yang menempatkan multiple bos children dalam dua dimensi arrangement.
+   - SliverList: sliver yang menempatkan multiple box children dalam linear array di sepanjang sumbu utama.
+   - SliverPadding: sliver yang mengaplikasikan padding pada setiap sisi dari sliver lain.
+   - SliverPersistentHeader: sliver yang ukurannya bervariasi ketika sliver di-_scroll_ ke tepi dari viewport berseberangan dengan GrowthDirection milik sliver.
+   - SliverToBoxAdapter: sliver yang terdiri dari single box widget.
 
 **Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!**
 
@@ -152,7 +152,11 @@ Elemen input pada form yang digunakan merupakan TextFormField karena menerima se
 
 Jawaban:
 
-
+Penerapan clean architecture pada aplikasi Flutter dapat diterapkan dengan memisahkan layer menjadi berikut:
+- Feature layer atau presentation layer yang terdiri dari komponen user interface (UI) seperti widget, screen, dan view. Berperan dalam meng-_handle_ interaksi user dan rendering UI.
+- Domain layer sebagai _business logic_ dari aplikasi yang terdiri dari _cases_, _entities_, dan _repository interfaces._
+- Data layer sebagai penerima dan penyimpanan data. Terdiri dari _repositories_ dan sumber data.
+Dengan pemisahan yang dilakukan dapat membantu memahami aliran data dan tenggung jawab masing-masing layer, memberikan independensi sehingga apabila suatu lapisan berubah tidak akan mempengaruhi lapisan lainnya. Selain itu diperlukan testing untuk pengujian unit.
 
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)**
 
