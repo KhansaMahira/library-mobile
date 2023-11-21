@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:library_mobile/screens/library_form.dart';
 import 'package:library_mobile/screens/library_table.dart';
 import 'package:library_mobile/screens/menu.dart';
+import 'package:library_mobile/screens/pages/list_book.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -59,9 +60,11 @@ class LeftDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const LibraryFormPage(),
-                ));
+                )
+              );
             },
           ),
+          /*
           ListTile(
             leading: const Icon(Icons.checklist),
             title: const Text('Lihat Buku'),
@@ -70,8 +73,23 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LibraryTablePage(),
-                ));
+                  builder: (context) => const LibraryTablePage(),
+                )
+              );
+            },
+          ),
+          */
+          ListTile(
+            leading: const Icon(Icons.shopping_basket),
+            title: const Text('Daftar Buku'),
+            onTap: () {
+              // Route menu ke halaman produk
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BookPage()
+                ),
+              );
             },
           ),
         ],

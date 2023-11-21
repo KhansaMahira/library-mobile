@@ -8,7 +8,7 @@ class MyHomePage extends StatelessWidget {
   final List<LibraryItem> items = [
     LibraryItem("Lihat Buku", Colors.redAccent, Icons.checklist),
     LibraryItem("Tambah Buku", Colors.lightGreen, Icons.add_shopping_cart),
-    LibraryItem("Logout", Color(0xFF716CFF), Icons.logout),
+    LibraryItem("Logout", const Color(0xFF716CFF), Icons.logout),
 ];
 
     @override
