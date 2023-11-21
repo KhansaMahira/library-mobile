@@ -41,9 +41,11 @@ class LibraryTablePage extends StatelessWidget {
         ],
         rows: BookService.getBooksList().map((book) => DataRow(
           cells: [
+            /*
             DataCell(Text(book.name)),
             DataCell(Text(book.amount.toString())),
             DataCell(Text(book.description)),
+            */
           ],
         )).toList(),
       ),
