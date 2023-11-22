@@ -176,34 +176,75 @@ Jawaban:
 
 Jawaban:
 
-{Jawaban}
+Ya, _developer_ dapat melakukan pengambilan data JSON tanpa membuat model terlebih dahulu. Akan tetapi, pengambilan data tanpa membuat model akan membuat kode menjadi lebih kompleks karena sulit untuk membedakan tipe dan kegunaan masing-masing data. Oleh karena itu, untuk pengambilan data yang sederhana dapat dilakukan tanpa membuat model. Sedangkan, untuk pengambilan data yang kompleks sebaiknya dilakukan dengan membuat model. Dengan membuat model sebelum pengambilan data JSON, akan membuat kode lebih mudah dibaca dan menerapkan prinsip pemisahan logika pengambilan data dengan logika aplikasi yang lain.
 
 **Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
 
 Jawaban:
 
-{Jawaban}
+CookieRequest digunakan untuk membatasi aktivitas penggunaan aplikasi hanya bagi pengguna yang telah memiliki akun yang bisa mengakses aplikasi melalui login. Instance CookieRequest perlu dibagikan ke semua komponen di aplikasi Flutter karena supaya tidak ada komponen yang dapat digunakan dan tidak dapat merubah state aplikasi apabila pengguna tidak login pada aplikasi.
 
 **Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.**
 
 Jawaban:
-
-{Jawaban}
+1. Menyiapkan model sesuai dengan data yang disimpan pada JSON.
+2. Menambahkan package http pada folder flutter.
+3. Menambahkan _permission_ untuk akses internet pada aplikasi flutter pada android/app/src/main/AndroidManifest.xml
+4. Menyiapkan file yang akan digunakan untuk menampilkan data dari JSON
+5. Menambahkan method fecthProduct() async pada class _BookPageState dengan url yang digunakan merupakan url yang memiliki data JSON yang akan ditampilkan pada flutter.
+6. Menggunakan ListView.builder untuk menampilkan data yang telah di-_fetch_.
+7. Menambahkan route ke halaman yang menampilkan data dari JSON.
 
 **Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
 
 Jawaban:
 
-{Jawaban}
+Proyek Django yang telah dibuat berperan sebagai BackEnd. Sedangkan proyek Flutter berperan sebagai FrontEnd.
+1. Sistem register dan login:
+   - Pengguna meng-_input_ data seperti username dan password pada flutter.
+   - Data dikirimkan ke server Django melalui HTTP request.
+   - Django menerima permintaan POST dan memproses data.
+   - Apabila register maka akan menyimpan data, apabila login maka akan memvalidasi pengguna.
+2. Token:
+   - Aplikasi Flutter menyimpan token yang diterima secara aman. Token akan digunakan untuk otorisasi setiap permintaan pada aplikasi.
+   - Apabila masa berlaku token telah habis, Django akan mengeluarkan token terbaru yang akan dikembalikan pada aplikasi Flutter.
+   - Jika pengguna keluar dari aplikasi, Django dapat mencatat dan menghapus token yang berkaitan.
+3. Otorisasi permintaan:
+   - Setiap permintaan pada aplikasi Flutter yang memerlukan autentikasi menyertakan token pada header HTTP request.
+   - Django memverifikasi token dan memberikan akses jika valid.
+4. Tampilan menu:
+   - Tampilan pada aplikasi flutter akan sesuai dengan data yang dimiliki oleh masing-masing pengguna.
 
-**Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.**
+**Sebutkan seluruh _widget_ yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.**
 
 Jawaban:
-
-{Jawaban}
+- Provider digunakan sebagai penyedia untuk membuat nilai, menyimpannya, dan memaparkannya pada keturunannya.
+- LoginPage digunakan sebagai penampil halaman login beserta komponen input username dan password serta button untuk melanjutkan routing ke halaman utama aplikasi.
+- TextEditingController digunakan sebagai controller untuk bisa diterapkan editing atau perbaikan text field.
+- CookieRequest digunakan untuk membatasi aktivitas penggunaan aplikasi hanya bagi pengguna yang telah memiliki akun yang bisa mengakses aplikasi melalui login.
+- InputDecoration digunakan untuk membuat kumpulan _border_, label, ikon, dan _style_ yang digunakan untuk mendekorasi sebuah Material Design text field.
+- ElevatedButton digunakan untuk memberikan respon apabila diklik.
+- SizedBox digunakan untuk mengizinkan spesifikasi panjang dan lebar yang tetap pada child widget.
+- Navigator digunakan untuk mengatur stack dari route pengguna pada aplikasi.
+- BookPage digunakan sebagai halaman untuk menampilkan data buku yang telah di-_input_.
+- FutureBuilder digunakan untuk membuat _widget_ yang dibuat sendiri berdasarkan cuplikan interaksi terbaru dengan masa depan.
+- AsyncSnapshot digunakan untuk representasi yang tidak dapat diubah dari interaksi terbaru dengan komputasi asinkron.
+- CircularProgressIndicator digunakan untuk membuat indikator _progress_ melingkar.
+- LibraryFormPage untuk menampilkan halaman yang menerima input berupa nama atau judul buku, jumlah buku, dan deskripsi buku.
+- OutlineInputBorder digunakan untuk membuat batasan input berupa persegi panjang dengan masing-masing sudut melengkung.
+- BorderRadius digunakan untuk set batasan radius pada widget.
+- TextFormField digunakan sebagai membuat FormField yang inputnya berupa teks.
+- LeftDrawer digunakan sebagai navigasi ke halaman lain pada sisi kiri aplikasi.
 
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).**
 
 Jawaban:
-
-{Jawaban}
+1. Membuat aplikasi pada Django berupa authentication pada repository library sebagai backend dari library_mobile. Menyesuaikan settings.py dengan menambahkan authentication pada INSTALLED_APPS, mengundul _library_ django-cors-headers dan menambahkan penyesuaian termasuk link yang akan digunakan untuk mengambil data json.
+2. Membuat method login dan logout pada authentication/views.py dan menambahkan _path_-nya pada authentication/urls.py.
+3. Mengunduh _package_ provider dan pbp_django_auth. Berikutnya saya menyesuaikan penggunaan provider pada lib/main.dart.
+4. Menambahkan lib/screens/login.dart sebagai halaman login serta pada file tersebut saya menambahkan request yang menggunakan CookieRequest. Untuk penyesuaian pada lib/main.dart home diganti menjadi LoginPage.
+5. Membuat model berdasarkan data JSON pada proyek Django dengan menyesuaikan file lib/models/book.dart.
+6. Melakukan fetch data yang akan ditampilkan pada aplikasi flutter yaitu diawali dengan menambahkan _package_ http dan melakukan penyesuaian _permission_ pada android/app/src/main/AndroidManifest.xml. Berikutnya membuat lib/screens/pages/list_book.dart, menambahkan method fetchProduct secara async dengan menggunakan link proyek Django yang telah di-_deploy_. Untuk tampilan data yang telah didapatkan menggunakan ListView.builder. Setelah selesai, ditambahkan routing ke BookPage pada lib/widgets/left_drawer.dart dan lib/widgets/library_card.dart.
+7. Setelahnya saya melakukan integrasi Form Flutter dengan Django dengan menambahkan fungsi create_product_flutter pada main/views.py pada proyek Django serta menambahkan _path_ fungsi pada main/urls.py.
+8. Pada proyek Flutter lib/screens/library_form.dart saya menambahkan request yang menggunakan CookieRequest. Oleh karena itu, form pada file harus diubah dengan menambahkan response await request postJson menggunakan link proyek Django yang telah di-_deploy_ dan _path_ yang sesuai dan encode data setiap input field. Apabila sukses maka routing kembali ke halaman utama.
+9. Method logout yang telah dibuat digunakan dan disesuaikan dengan kode pada lib/widgets/library_card.dart. Pada class LibraryCard, saya menambahkan request yang menggunakan CookieRequest.
