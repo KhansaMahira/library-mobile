@@ -168,3 +168,42 @@ Jawaban:
 5) Untuk kerapihan file, saya membuat folder baru dan memindahkan file ke folder yang sesuai. Folder widgets berisi file left_drawer.dart dan library_card.dart. Folder screens berisi file menu.dart dan library_form.dart.
 6) Untuk menyelesaikan soal bonus, saya membuat folder dan file baru seperti models/book.dart yang berisi class Book sebagai model data. Saya juga membuat services/book_service.dart yang akan menyimpan list buku, menambahkan buku pada list, dan mendapatkan list buku pada class BookService. Saya juga memerlukan class yang menampilkan tabel data dari item buku pada list buku yaitu dengan membuat class LibraryTablePage pada screens/library_table.dart. Pada class LibraryTablePage, saya menggunakan DataTable, DataColumn, dan rows yang memiliki isi berupa BookService.getBooksList() yang di-_map_ pada DataRow dengan masing-masing atribut dari objek buku ditampilkan pada DataCell. Saya juga menambahkan _routing_ menuju halaman Lihat Buku pada widgets/library_card.dart dan widgets/left_drawer.dart.
 7) Tidak lupa juga selama pengerjaan, saya menambahkan import yang dibutuhkan pada masing-masing file.
+
+
+**Tugas 9**
+
+**Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?**
+
+Jawaban:
+
+{Jawaban}
+
+**Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
+
+Jawaban:
+
+{Jawaban}
+
+**Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.**
+
+Jawaban:
+
+{Jawaban}
+
+**Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
+
+Jawaban:
+
+{Jawaban}
+
+**Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.**
+
+Jawaban:
+
+{Jawaban}
+
+**Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).**
+
+Jawaban:
+
+{Jawaban}
