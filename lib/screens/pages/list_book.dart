@@ -15,7 +15,7 @@ class _BookPageState extends State<BookPage> {
   Future<List<Book>> fetchProduct() async {
     // Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
     var url = Uri.parse(
-      'http://localhost:8000/json/');
+      'https://khansa-mahira-tugas.pbp.cs.ui.ac.id/json/');
     var response = await http.get(
       url,
       headers: {"Content-Type": "application/json"},
